@@ -1,0 +1,2641 @@
+{
+ "airlines": {
+  "9E": "Endeavor Air Inc.",
+  "AA": "American Airlines Inc.",
+  "AS": "Alaska Airlines Inc.",
+  "B6": "JetBlue Airways",
+  "DL": "Delta Air Lines Inc.",
+  "EV": "ExpressJet Airlines Inc.",
+  "F9": "Frontier Airlines Inc.",
+  "FL": "AirTran Airways Corporation",
+  "HA": "Hawaiian Airlines Inc.",
+  "MQ": "Envoy Air",
+  "OO": "SkyWest Airlines Inc.",
+  "UA": "United Air Lines Inc.",
+  "US": "US Airways Inc.",
+  "VX": "Virgin America",
+  "WN": "Southwest Airlines Co.",
+  "YV": "Mesa Airlines Inc."
+ },
+ "airports": {
+  "ABQ": "Albuquerque International Sunport",
+  "ACK": "Nantucket Mem",
+  "ALB": "Albany Intl",
+  "ANC": "Ted Stevens Anchorage Intl",
+  "ATL": "Hartsfield Jackson Atlanta Intl",
+  "AUS": "Austin Bergstrom Intl",
+  "AVL": "Asheville Regional Airport",
+  "BDL": "Bradley Intl",
+  "BGR": "Bangor Intl",
+  "BHM": "Birmingham Intl",
+  "BNA": "Nashville Intl",
+  "BOS": "General Edward Lawrence Logan Intl",
+  "BQN": "Rafael Hernández Airport, Aguadilla",
+  "BTV": "Burlington Intl",
+  "BUF": "Buffalo Niagara Intl",
+  "BUR": "Bob Hope",
+  "BWI": "Baltimore Washington Intl",
+  "BZN": "Gallatin Field",
+  "CAE": "Columbia Metropolitan",
+  "CAK": "Akron Canton Regional Airport",
+  "CHO": "Charlottesville-Albemarle",
+  "CHS": "Charleston Afb Intl",
+  "CLE": "Cleveland Hopkins Intl",
+  "CLT": "Charlotte Douglas Intl",
+  "CMH": "Port Columbus Intl",
+  "CRW": "Yeager",
+  "CVG": "Cincinnati Northern Kentucky Intl",
+  "DAY": "James M Cox Dayton Intl",
+  "DCA": "Ronald Reagan Washington Natl",
+  "DEN": "Denver Intl",
+  "DFW": "Dallas Fort Worth Intl",
+  "DSM": "Des Moines Intl",
+  "DTW": "Detroit Metro Wayne Co",
+  "EGE": "Eagle Co Rgnl",
+  "EWR": "Newark Liberty Intl",
+  "EYW": "Key West Intl",
+  "FLL": "Fort Lauderdale Hollywood Intl",
+  "GRR": "Gerald R Ford Intl",
+  "GSO": "Piedmont Triad",
+  "GSP": "Greenville-Spartanburg International",
+  "HDN": "Yampa Valley",
+  "HNL": "Honolulu Intl",
+  "HOU": "William P Hobby",
+  "IAD": "Washington Dulles Intl",
+  "IAH": "George Bush Intercontinental",
+  "ILM": "Wilmington Intl",
+  "IND": "Indianapolis Intl",
+  "JAC": "Jackson Hole Airport",
+  "JAX": "Jacksonville Intl",
+  "JFK": "John F Kennedy Intl",
+  "LAS": "Mc Carran Intl",
+  "LAX": "Los Angeles Intl",
+  "LEX": "Blue Grass",
+  "LGA": "La Guardia",
+  "LGB": "Long Beach",
+  "MCI": "Kansas City Intl",
+  "MCO": "Orlando Intl",
+  "MDW": "Chicago Midway Intl",
+  "MEM": "Memphis Intl",
+  "MHT": "Manchester Regional Airport",
+  "MIA": "Miami Intl",
+  "MKE": "General Mitchell Intl",
+  "MSN": "Dane Co Rgnl Truax Fld",
+  "MSP": "Minneapolis St Paul Intl",
+  "MSY": "Louis Armstrong New Orleans Intl",
+  "MTJ": "Montrose Regional Airport",
+  "MVY": "Martha's Vineyard",
+  "MYR": "Myrtle Beach Intl",
+  "OAK": "Metropolitan Oakland Intl",
+  "OKC": "Will Rogers World",
+  "OMA": "Eppley Afld",
+  "ORD": "Chicago Ohare Intl",
+  "ORF": "Norfolk Intl",
+  "PBI": "Palm Beach Intl",
+  "PDX": "Portland Intl",
+  "PHL": "Philadelphia Intl",
+  "PHX": "Phoenix Sky Harbor Intl",
+  "PIT": "Pittsburgh Intl",
+  "PSE": "Mercedita Airport, Ponce",
+  "PSP": "Palm Springs Intl",
+  "PVD": "Theodore Francis Green State",
+  "PWM": "Portland Intl Jetport",
+  "RDU": "Raleigh Durham Intl",
+  "RIC": "Richmond Intl",
+  "ROC": "Greater Rochester Intl",
+  "RSW": "Southwest Florida Intl",
+  "SAN": "San Diego Intl",
+  "SAT": "San Antonio Intl",
+  "SAV": "Savannah Hilton Head Intl",
+  "SBN": "South Bend Rgnl",
+  "SDF": "Louisville International Airport",
+  "SEA": "Seattle Tacoma Intl",
+  "SFO": "San Francisco Intl",
+  "SJC": "Norman Y Mineta San Jose Intl",
+  "SJU": "Luis Muñoz Marín Intl, San Juan",
+  "SLC": "Salt Lake City Intl",
+  "SMF": "Sacramento Intl",
+  "SNA": "John Wayne Arpt Orange Co",
+  "SRQ": "Sarasota Bradenton Intl",
+  "STL": "Lambert St Louis Intl",
+  "STT": "Cyril E. King Airport, St. Thomas",
+  "SYR": "Syracuse Hancock Intl",
+  "TPA": "Tampa Intl",
+  "TUL": "Tulsa Intl",
+  "TVC": "Cherry Capital Airport",
+  "TYS": "Mc Ghee Tyson",
+  "XNA": "NW Arkansas Regional"
+ },
+ "origins": [
+  "EWR",
+  "JFK",
+  "LGA"
+ ],
+ "routes": {
+  "EWR": {
+   "ALB": {
+    "distance": 143,
+    "air_time": 31,
+    "flights": 418,
+    "delay_rate": 0.4402,
+    "carriers": [
+     "EV"
+    ]
+   },
+   "ANC": {
+    "distance": 3370,
+    "air_time": 414,
+    "flights": 8,
+    "delay_rate": 0.625,
+    "carriers": [
+     "UA"
+    ]
+   },
+   "ATL": {
+    "distance": 746,
+    "air_time": 111,
+    "flights": 4876,
+    "delay_rate": 0.4717,
+    "carriers": [
+     "9E",
+     "DL",
+     "EV",
+     "UA"
+    ]
+   },
+   "AUS": {
+    "distance": 1504,
+    "air_time": 210,
+    "flights": 957,
+    "delay_rate": 0.3312,
+    "carriers": [
+     "UA",
+     "WN"
+    ]
+   },
+   "AVL": {
+    "distance": 583,
+    "air_time": 89,
+    "flights": 251,
+    "delay_rate": 0.4661,
+    "carriers": [
+     "EV"
+    ]
+   },
+   "BDL": {
+    "distance": 116,
+    "air_time": 25,
+    "flights": 412,
+    "delay_rate": 0.3495,
+    "carriers": [
+     "EV",
+     "UA"
+    ]
+   },
+   "BNA": {
+    "distance": 748,
+    "air_time": 113,
+    "flights": 2241,
+    "delay_rate": 0.4395,
+    "carriers": [
+     "EV",
+     "WN"
+    ]
+   },
+   "BOS": {
+    "distance": 200,
+    "air_time": 40,
+    "flights": 5247,
+    "delay_rate": 0.3208,
+    "carriers": [
+     "B6",
+     "EV",
+     "UA"
+    ]
+   },
+   "BQN": {
+    "distance": 1585,
+    "air_time": 196,
+    "flights": 295,
+    "delay_rate": 0.4881,
+    "carriers": [
+     "UA"
+    ]
+   },
+   "BTV": {
+    "distance": 266,
+    "air_time": 46,
+    "flights": 886,
+    "delay_rate": 0.447,
+    "carriers": [
+     "EV"
+    ]
+   },
+   "BUF": {
+    "distance": 282,
+    "air_time": 51,
+    "flights": 936,
+    "delay_rate": 0.4284,
+    "carriers": [
+     "EV"
+    ]
+   },
+   "BWI": {
+    "distance": 169,
+    "air_time": 37,
+    "flights": 524,
+    "delay_rate": 0.4504,
+    "carriers": [
+     "EV",
+     "WN"
+    ]
+   },
+   "BZN": {
+    "distance": 1882,
+    "air_time": 256,
+    "flights": 35,
+    "delay_rate": 0.4571,
+    "carriers": [
+     "UA"
+    ]
+   },
+   "CAE": {
+    "distance": 602,
+    "air_time": 90,
+    "flights": 94,
+    "delay_rate": 0.8404,
+    "carriers": [
+     "EV"
+    ]
+   },
+   "CHS": {
+    "distance": 628,
+    "air_time": 94,
+    "flights": 1343,
+    "delay_rate": 0.4959,
+    "carriers": [
+     "EV",
+     "UA"
+    ]
+   },
+   "CLE": {
+    "distance": 404,
+    "air_time": 66,
+    "flights": 1730,
+    "delay_rate": 0.3595,
+    "carriers": [
+     "EV",
+     "UA"
+    ]
+   },
+   "CLT": {
+    "distance": 529,
+    "air_time": 83,
+    "flights": 4893,
+    "delay_rate": 0.4288,
+    "carriers": [
+     "EV",
+     "UA",
+     "US"
+    ]
+   },
+   "CMH": {
+    "distance": 463,
+    "air_time": 75,
+    "flights": 686,
+    "delay_rate": 0.398,
+    "carriers": [
+     "EV"
+    ]
+   },
+   "CVG": {
+    "distance": 569,
+    "air_time": 95,
+    "flights": 2513,
+    "delay_rate": 0.4465,
+    "carriers": [
+     "9E",
+     "EV"
+    ]
+   },
+   "DAY": {
+    "distance": 533,
+    "air_time": 85,
+    "flights": 1057,
+    "delay_rate": 0.5118,
+    "carriers": [
+     "EV"
+    ]
+   },
+   "DCA": {
+    "distance": 199,
+    "air_time": 42,
+    "flights": 1567,
+    "delay_rate": 0.5782,
+    "carriers": [
+     "EV",
+     "UA"
+    ]
+   },
+   "DEN": {
+    "distance": 1605,
+    "air_time": 224,
+    "flights": 2815,
+    "delay_rate": 0.4721,
+    "carriers": [
+     "UA",
+     "WN"
+    ]
+   },
+   "DFW": {
+    "distance": 1372,
+    "air_time": 196,
+    "flights": 3014,
+    "delay_rate": 0.3374,
+    "carriers": [
+     "AA",
+     "UA"
+    ]
+   },
+   "DSM": {
+    "distance": 1017,
+    "air_time": 147,
+    "flights": 390,
+    "delay_rate": 0.5128,
+    "carriers": [
+     "EV"
+    ]
+   },
+   "DTW": {
+    "distance": 488,
+    "air_time": 84,
+    "flights": 3009,
+    "delay_rate": 0.4177,
+    "carriers": [
+     "9E",
+     "DL",
+     "EV",
+     "OO",
+     "UA"
+    ]
+   },
+   "EGE": {
+    "distance": 1726,
+    "air_time": 252,
+    "flights": 106,
+    "delay_rate": 0.3113,
+    "carriers": [
+     "UA"
+    ]
+   },
+   "FLL": {
+    "distance": 1065,
+    "air_time": 151,
+    "flights": 3740,
+    "delay_rate": 0.4369,
+    "carriers": [
+     "B6",
+     "UA"
+    ]
+   },
+   "GRR": {
+    "distance": 605,
+    "air_time": 95,
+    "flights": 688,
+    "delay_rate": 0.5276,
+    "carriers": [
+     "EV"
+    ]
+   },
+   "GSO": {
+    "distance": 445,
+    "air_time": 71,
+    "flights": 1045,
+    "delay_rate": 0.489,
+    "carriers": [
+     "EV"
+    ]
+   },
+   "GSP": {
+    "distance": 594,
+    "air_time": 92,
+    "flights": 692,
+    "delay_rate": 0.4971,
+    "carriers": [
+     "EV"
+    ]
+   },
+   "HDN": {
+    "distance": 1728,
+    "air_time": 247,
+    "flights": 14,
+    "delay_rate": 0.5714,
+    "carriers": [
+     "UA"
+    ]
+   },
+   "HNL": {
+    "distance": 4963,
+    "air_time": 611,
+    "flights": 359,
+    "delay_rate": 0.3955,
+    "carriers": [
+     "UA"
+    ]
+   },
+   "HOU": {
+    "distance": 1411,
+    "air_time": 203,
+    "flights": 948,
+    "delay_rate": 0.4599,
+    "carriers": [
+     "WN"
+    ]
+   },
+   "IAD": {
+    "distance": 212,
+    "air_time": 45,
+    "flights": 1202,
+    "delay_rate": 0.4634,
+    "carriers": [
+     "EV",
+     "UA"
+    ]
+   },
+   "IAH": {
+    "distance": 1400,
+    "air_time": 195,
+    "flights": 3923,
+    "delay_rate": 0.427,
+    "carriers": [
+     "UA"
+    ]
+   },
+   "IND": {
+    "distance": 645,
+    "air_time": 101,
+    "flights": 1241,
+    "delay_rate": 0.4416,
+    "carriers": [
+     "EV",
+     "UA"
+    ]
+   },
+   "JAC": {
+    "distance": 1874,
+    "air_time": 260,
+    "flights": 19,
+    "delay_rate": 0.7895,
+    "carriers": [
+     "UA"
+    ]
+   },
+   "JAX": {
+    "distance": 820,
+    "air_time": 120,
+    "flights": 1187,
+    "delay_rate": 0.5392,
+    "carriers": [
+     "EV"
+    ]
+   },
+   "LAS": {
+    "distance": 2227,
+    "air_time": 298,
+    "flights": 1990,
+    "delay_rate": 0.3377,
+    "carriers": [
+     "UA"
+    ]
+   },
+   "LAX": {
+    "distance": 2454,
+    "air_time": 325,
+    "flights": 4867,
+    "delay_rate": 0.4173,
+    "carriers": [
+     "AA",
+     "UA",
+     "VX"
+    ]
+   },
+   "MCI": {
+    "distance": 1092,
+    "air_time": 161,
+    "flights": 1276,
+    "delay_rate": 0.5509,
+    "carriers": [
+     "EV"
+    ]
+   },
+   "MCO": {
+    "distance": 937,
+    "air_time": 133,
+    "flights": 4893,
+    "delay_rate": 0.3671,
+    "carriers": [
+     "B6",
+     "UA"
+    ]
+   },
+   "MDW": {
+    "distance": 711,
+    "air_time": 110,
+    "flights": 1988,
+    "delay_rate": 0.4723,
+    "carriers": [
+     "WN"
+    ]
+   },
+   "MEM": {
+    "distance": 946,
+    "air_time": 143,
+    "flights": 845,
+    "delay_rate": 0.5669,
+    "carriers": [
+     "EV"
+    ]
+   },
+   "MHT": {
+    "distance": 209,
+    "air_time": 39,
+    "flights": 824,
+    "delay_rate": 0.4381,
+    "carriers": [
+     "EV"
+    ]
+   },
+   "MIA": {
+    "distance": 1085,
+    "air_time": 151,
+    "flights": 2606,
+    "delay_rate": 0.3691,
+    "carriers": [
+     "AA",
+     "UA"
+    ]
+   },
+   "MKE": {
+    "distance": 725,
+    "air_time": 114,
+    "flights": 1058,
+    "delay_rate": 0.5681,
+    "carriers": [
+     "EV"
+    ]
+   },
+   "MSN": {
+    "distance": 799,
+    "air_time": 122,
+    "flights": 345,
+    "delay_rate": 0.5623,
+    "carriers": [
+     "EV"
+    ]
+   },
+   "MSP": {
+    "distance": 1008,
+    "air_time": 149,
+    "flights": 2255,
+    "delay_rate": 0.3845,
+    "carriers": [
+     "9E",
+     "DL",
+     "EV",
+     "OO",
+     "UA"
+    ]
+   },
+   "MSY": {
+    "distance": 1167,
+    "air_time": 165,
+    "flights": 1125,
+    "delay_rate": 0.4231,
+    "carriers": [
+     "EV",
+     "UA",
+     "WN"
+    ]
+   },
+   "MTJ": {
+    "distance": 1795,
+    "air_time": 254,
+    "flights": 14,
+    "delay_rate": 0.3571,
+    "carriers": [
+     "UA"
+    ]
+   },
+   "MYR": {
+    "distance": 550,
+    "air_time": 86,
+    "flights": 55,
+    "delay_rate": 0.3455,
+    "carriers": [
+     "EV"
+    ]
+   },
+   "OKC": {
+    "distance": 1325,
+    "air_time": 190,
+    "flights": 315,
+    "delay_rate": 0.6381,
+    "carriers": [
+     "EV"
+    ]
+   },
+   "OMA": {
+    "distance": 1134,
+    "air_time": 164,
+    "flights": 726,
+    "delay_rate": 0.4821,
+    "carriers": [
+     "EV",
+     "UA"
+    ]
+   },
+   "ORD": {
+    "distance": 719,
+    "air_time": 112,
+    "flights": 5828,
+    "delay_rate": 0.417,
+    "carriers": [
+     "EV",
+     "MQ",
+     "UA"
+    ]
+   },
+   "ORF": {
+    "distance": 284,
+    "air_time": 50,
+    "flights": 541,
+    "delay_rate": 0.4658,
+    "carriers": [
+     "EV"
+    ]
+   },
+   "PBI": {
+    "distance": 1023,
+    "air_time": 144,
+    "flights": 2334,
+    "delay_rate": 0.4293,
+    "carriers": [
+     "B6",
+     "UA"
+    ]
+   },
+   "PDX": {
+    "distance": 2434,
+    "air_time": 328,
+    "flights": 563,
+    "delay_rate": 0.3943,
+    "carriers": [
+     "UA"
+    ]
+   },
+   "PHL": {
+    "distance": 80,
+    "air_time": 29,
+    "flights": 48,
+    "delay_rate": 0.4167,
+    "carriers": [
+     "EV"
+    ]
+   },
+   "PHX": {
+    "distance": 2133,
+    "air_time": 289,
+    "flights": 2685,
+    "delay_rate": 0.4067,
+    "carriers": [
+     "UA",
+     "US",
+     "WN"
+    ]
+   },
+   "PIT": {
+    "distance": 319,
+    "air_time": 56,
+    "flights": 531,
+    "delay_rate": 0.3352,
+    "carriers": [
+     "EV",
+     "UA"
+    ]
+   },
+   "PVD": {
+    "distance": 160,
+    "air_time": 32,
+    "flights": 358,
+    "delay_rate": 0.5056,
+    "carriers": [
+     "EV"
+    ]
+   },
+   "PWM": {
+    "distance": 284,
+    "air_time": 48,
+    "flights": 730,
+    "delay_rate": 0.5685,
+    "carriers": [
+     "EV"
+    ]
+   },
+   "RDU": {
+    "distance": 416,
+    "air_time": 69,
+    "flights": 1417,
+    "delay_rate": 0.4425,
+    "carriers": [
+     "EV",
+     "UA"
+    ]
+   },
+   "RIC": {
+    "distance": 277,
+    "air_time": 53,
+    "flights": 1615,
+    "delay_rate": 0.569,
+    "carriers": [
+     "EV"
+    ]
+   },
+   "ROC": {
+    "distance": 246,
+    "air_time": 45,
+    "flights": 488,
+    "delay_rate": 0.4754,
+    "carriers": [
+     "EV"
+    ]
+   },
+   "RSW": {
+    "distance": 1068,
+    "air_time": 155,
+    "flights": 1424,
+    "delay_rate": 0.3139,
+    "carriers": [
+     "B6",
+     "UA"
+    ]
+   },
+   "SAN": {
+    "distance": 2425,
+    "air_time": 325,
+    "flights": 1125,
+    "delay_rate": 0.4018,
+    "carriers": [
+     "UA"
+    ]
+   },
+   "SAT": {
+    "distance": 1569,
+    "air_time": 219,
+    "flights": 323,
+    "delay_rate": 0.4087,
+    "carriers": [
+     "UA"
+    ]
+   },
+   "SAV": {
+    "distance": 708,
+    "air_time": 106,
+    "flights": 681,
+    "delay_rate": 0.5007,
+    "carriers": [
+     "EV"
+    ]
+   },
+   "SBN": {
+    "distance": 637,
+    "air_time": 93,
+    "flights": 4,
+    "delay_rate": 0.25,
+    "carriers": [
+     "EV"
+    ]
+   },
+   "SDF": {
+    "distance": 642,
+    "air_time": 105,
+    "flights": 854,
+    "delay_rate": 0.5023,
+    "carriers": [
+     "EV",
+     "UA"
+    ]
+   },
+   "SEA": {
+    "distance": 2402,
+    "air_time": 325,
+    "flights": 1810,
+    "delay_rate": 0.3525,
+    "carriers": [
+     "AS",
+     "UA"
+    ]
+   },
+   "SFO": {
+    "distance": 2565,
+    "air_time": 342,
+    "flights": 5064,
+    "delay_rate": 0.3874,
+    "carriers": [
+     "UA",
+     "VX"
+    ]
+   },
+   "SJU": {
+    "distance": 1608,
+    "air_time": 200,
+    "flights": 1063,
+    "delay_rate": 0.3547,
+    "carriers": [
+     "B6",
+     "UA"
+    ]
+   },
+   "SLC": {
+    "distance": 1969,
+    "air_time": 271,
+    "flights": 351,
+    "delay_rate": 0.4017,
+    "carriers": [
+     "DL"
+    ]
+   },
+   "SNA": {
+    "distance": 2434,
+    "air_time": 329,
+    "flights": 812,
+    "delay_rate": 0.2943,
+    "carriers": [
+     "UA"
+    ]
+   },
+   "STL": {
+    "distance": 872,
+    "air_time": 133,
+    "flights": 2374,
+    "delay_rate": 0.4903,
+    "carriers": [
+     "EV",
+     "UA",
+     "WN"
+    ]
+   },
+   "STT": {
+    "distance": 1634,
+    "air_time": 205,
+    "flights": 188,
+    "delay_rate": 0.3936,
+    "carriers": [
+     "UA"
+    ]
+   },
+   "SYR": {
+    "distance": 195,
+    "air_time": 39,
+    "flights": 146,
+    "delay_rate": 0.3836,
+    "carriers": [
+     "EV"
+    ]
+   },
+   "TPA": {
+    "distance": 997,
+    "air_time": 142,
+    "flights": 2315,
+    "delay_rate": 0.4073,
+    "carriers": [
+     "B6",
+     "EV",
+     "UA"
+    ]
+   },
+   "TUL": {
+    "distance": 1215,
+    "air_time": 176,
+    "flights": 294,
+    "delay_rate": 0.6565,
+    "carriers": [
+     "EV"
+    ]
+   },
+   "TVC": {
+    "distance": 644,
+    "air_time": 95,
+    "flights": 22,
+    "delay_rate": 0.3636,
+    "carriers": [
+     "EV"
+    ]
+   },
+   "TYS": {
+    "distance": 631,
+    "air_time": 96,
+    "flights": 313,
+    "delay_rate": 0.6358,
+    "carriers": [
+     "EV"
+    ]
+   },
+   "XNA": {
+    "distance": 1131,
+    "air_time": 165,
+    "flights": 283,
+    "delay_rate": 0.47,
+    "carriers": [
+     "EV"
+    ]
+   }
+  },
+  "JFK": {
+   "ABQ": {
+    "distance": 1826,
+    "air_time": 246,
+    "flights": 254,
+    "delay_rate": 0.4213,
+    "carriers": [
+     "B6"
+    ]
+   },
+   "ACK": {
+    "distance": 199,
+    "air_time": 41,
+    "flights": 264,
+    "delay_rate": 0.3939,
+    "carriers": [
+     "B6"
+    ]
+   },
+   "ATL": {
+    "distance": 760,
+    "air_time": 111,
+    "flights": 1920,
+    "delay_rate": 0.4016,
+    "carriers": [
+     "9E",
+     "DL",
+     "EV"
+    ]
+   },
+   "AUS": {
+    "distance": 1521,
+    "air_time": 212,
+    "flights": 1454,
+    "delay_rate": 0.458,
+    "carriers": [
+     "9E",
+     "AA",
+     "B6",
+     "DL"
+    ]
+   },
+   "BHM": {
+    "distance": 865,
+    "air_time": 117,
+    "flights": 1,
+    "delay_rate": 0.0,
+    "carriers": [
+     "EV"
+    ]
+   },
+   "BNA": {
+    "distance": 765,
+    "air_time": 116,
+    "flights": 694,
+    "delay_rate": 0.4063,
+    "carriers": [
+     "9E",
+     "DL",
+     "MQ"
+    ]
+   },
+   "BOS": {
+    "distance": 187,
+    "air_time": 38,
+    "flights": 5773,
+    "delay_rate": 0.338,
+    "carriers": [
+     "9E",
+     "AA",
+     "B6",
+     "DL"
+    ]
+   },
+   "BQN": {
+    "distance": 1576,
+    "air_time": 194,
+    "flights": 593,
+    "delay_rate": 0.457,
+    "carriers": [
+     "B6"
+    ]
+   },
+   "BTV": {
+    "distance": 266,
+    "air_time": 47,
+    "flights": 1347,
+    "delay_rate": 0.3942,
+    "carriers": [
+     "B6"
+    ]
+   },
+   "BUF": {
+    "distance": 301,
+    "air_time": 57,
+    "flights": 3512,
+    "delay_rate": 0.3847,
+    "carriers": [
+     "9E",
+     "B6"
+    ]
+   },
+   "BUR": {
+    "distance": 2465,
+    "air_time": 334,
+    "flights": 370,
+    "delay_rate": 0.4486,
+    "carriers": [
+     "B6"
+    ]
+   },
+   "BWI": {
+    "distance": 184,
+    "air_time": 38,
+    "flights": 1148,
+    "delay_rate": 0.3711,
+    "carriers": [
+     "9E",
+     "MQ"
+    ]
+   },
+   "CHS": {
+    "distance": 636,
+    "air_time": 94,
+    "flights": 942,
+    "delay_rate": 0.3758,
+    "carriers": [
+     "9E",
+     "B6"
+    ]
+   },
+   "CLE": {
+    "distance": 425,
+    "air_time": 76,
+    "flights": 666,
+    "delay_rate": 0.5135,
+    "carriers": [
+     "9E",
+     "MQ"
+    ]
+   },
+   "CLT": {
+    "distance": 541,
+    "air_time": 86,
+    "flights": 2820,
+    "delay_rate": 0.4312,
+    "carriers": [
+     "9E",
+     "B6",
+     "US"
+    ]
+   },
+   "CMH": {
+    "distance": 483,
+    "air_time": 76,
+    "flights": 705,
+    "delay_rate": 0.5702,
+    "carriers": [
+     "9E",
+     "MQ"
+    ]
+   },
+   "CVG": {
+    "distance": 589,
+    "air_time": 95,
+    "flights": 952,
+    "delay_rate": 0.4916,
+    "carriers": [
+     "9E",
+     "MQ"
+    ]
+   },
+   "DCA": {
+    "distance": 213,
+    "air_time": 48,
+    "flights": 3076,
+    "delay_rate": 0.3966,
+    "carriers": [
+     "9E",
+     "DL",
+     "MQ"
+    ]
+   },
+   "DEN": {
+    "distance": 1626,
+    "air_time": 227,
+    "flights": 697,
+    "delay_rate": 0.4448,
+    "carriers": [
+     "B6",
+     "DL"
+    ]
+   },
+   "DFW": {
+    "distance": 1391,
+    "air_time": 198,
+    "flights": 692,
+    "delay_rate": 0.4032,
+    "carriers": [
+     "9E",
+     "AA"
+    ]
+   },
+   "DTW": {
+    "distance": 509,
+    "air_time": 87,
+    "flights": 1114,
+    "delay_rate": 0.3627,
+    "carriers": [
+     "9E",
+     "DL"
+    ]
+   },
+   "EGE": {
+    "distance": 1747,
+    "air_time": 255,
+    "flights": 101,
+    "delay_rate": 0.5545,
+    "carriers": [
+     "AA"
+    ]
+   },
+   "FLL": {
+    "distance": 1069,
+    "air_time": 150,
+    "flights": 4210,
+    "delay_rate": 0.4411,
+    "carriers": [
+     "AA",
+     "B6",
+     "DL"
+    ]
+   },
+   "HNL": {
+    "distance": 4983,
+    "air_time": 621,
+    "flights": 342,
+    "delay_rate": 0.2836,
+    "carriers": [
+     "HA"
+    ]
+   },
+   "HOU": {
+    "distance": 1428,
+    "air_time": 204,
+    "flights": 711,
+    "delay_rate": 0.436,
+    "carriers": [
+     "B6"
+    ]
+   },
+   "IAD": {
+    "distance": 228,
+    "air_time": 47,
+    "flights": 2522,
+    "delay_rate": 0.4227,
+    "carriers": [
+     "9E",
+     "B6",
+     "EV"
+    ]
+   },
+   "IAH": {
+    "distance": 1417,
+    "air_time": 201,
+    "flights": 271,
+    "delay_rate": 0.5867,
+    "carriers": [
+     "AA"
+    ]
+   },
+   "IND": {
+    "distance": 665,
+    "air_time": 104,
+    "flights": 658,
+    "delay_rate": 0.3997,
+    "carriers": [
+     "9E",
+     "MQ"
+    ]
+   },
+   "JAC": {
+    "distance": 1894,
+    "air_time": 275,
+    "flights": 2,
+    "delay_rate": 1.0,
+    "carriers": [
+     "DL"
+    ]
+   },
+   "JAX": {
+    "distance": 828,
+    "air_time": 119,
+    "flights": 1261,
+    "delay_rate": 0.4195,
+    "carriers": [
+     "9E",
+     "B6"
+    ]
+   },
+   "LAS": {
+    "distance": 2248,
+    "air_time": 302,
+    "flights": 3962,
+    "delay_rate": 0.3624,
+    "carriers": [
+     "AA",
+     "B6",
+     "DL",
+     "VX"
+    ]
+   },
+   "LAX": {
+    "distance": 2475,
+    "air_time": 329,
+    "flights": 11159,
+    "delay_rate": 0.3527,
+    "carriers": [
+     "AA",
+     "B6",
+     "DL",
+     "UA",
+     "VX"
+    ]
+   },
+   "LGB": {
+    "distance": 2465,
+    "air_time": 330,
+    "flights": 661,
+    "delay_rate": 0.3616,
+    "carriers": [
+     "B6"
+    ]
+   },
+   "MCI": {
+    "distance": 1113,
+    "air_time": 157,
+    "flights": 254,
+    "delay_rate": 0.378,
+    "carriers": [
+     "9E"
+    ]
+   },
+   "MCO": {
+    "distance": 944,
+    "air_time": 133,
+    "flights": 5429,
+    "delay_rate": 0.4202,
+    "carriers": [
+     "AA",
+     "B6",
+     "DL"
+    ]
+   },
+   "MEM": {
+    "distance": 964,
+    "air_time": 166,
+    "flights": 1,
+    "delay_rate": 0.0,
+    "carriers": [
+     "9E"
+    ]
+   },
+   "MIA": {
+    "distance": 1089,
+    "air_time": 151,
+    "flights": 3285,
+    "delay_rate": 0.302,
+    "carriers": [
+     "AA",
+     "DL"
+    ]
+   },
+   "MKE": {
+    "distance": 745,
+    "air_time": 114,
+    "flights": 172,
+    "delay_rate": 0.4709,
+    "carriers": [
+     "9E"
+    ]
+   },
+   "MSP": {
+    "distance": 1029,
+    "air_time": 153,
+    "flights": 1054,
+    "delay_rate": 0.425,
+    "carriers": [
+     "9E",
+     "DL"
+    ]
+   },
+   "MSY": {
+    "distance": 1182,
+    "air_time": 166,
+    "flights": 1592,
+    "delay_rate": 0.4215,
+    "carriers": [
+     "9E",
+     "B6",
+     "DL"
+    ]
+   },
+   "MVY": {
+    "distance": 173,
+    "air_time": 36,
+    "flights": 210,
+    "delay_rate": 0.2762,
+    "carriers": [
+     "9E",
+     "B6"
+    ]
+   },
+   "OAK": {
+    "distance": 2576,
+    "air_time": 345,
+    "flights": 309,
+    "delay_rate": 0.3754,
+    "carriers": [
+     "B6"
+    ]
+   },
+   "ORD": {
+    "distance": 740,
+    "air_time": 120,
+    "flights": 2231,
+    "delay_rate": 0.4357,
+    "carriers": [
+     "9E",
+     "AA",
+     "B6"
+    ]
+   },
+   "ORF": {
+    "distance": 290,
+    "air_time": 52,
+    "flights": 698,
+    "delay_rate": 0.4155,
+    "carriers": [
+     "9E",
+     "MQ"
+    ]
+   },
+   "PBI": {
+    "distance": 1028,
+    "air_time": 143,
+    "flights": 1724,
+    "delay_rate": 0.5174,
+    "carriers": [
+     "B6"
+    ]
+   },
+   "PDX": {
+    "distance": 2454,
+    "air_time": 329,
+    "flights": 779,
+    "delay_rate": 0.4275,
+    "carriers": [
+     "B6",
+     "DL"
+    ]
+   },
+   "PHL": {
+    "distance": 94,
+    "air_time": 29,
+    "flights": 895,
+    "delay_rate": 0.4425,
+    "carriers": [
+     "9E",
+     "DL",
+     "US"
+    ]
+   },
+   "PHX": {
+    "distance": 2153,
+    "air_time": 291,
+    "flights": 1921,
+    "delay_rate": 0.3842,
+    "carriers": [
+     "B6",
+     "DL",
+     "US"
+    ]
+   },
+   "PIT": {
+    "distance": 340,
+    "air_time": 66,
+    "flights": 1203,
+    "delay_rate": 0.4106,
+    "carriers": [
+     "9E",
+     "B6",
+     "DL",
+     "MQ"
+    ]
+   },
+   "PSE": {
+    "distance": 1617,
+    "air_time": 201,
+    "flights": 358,
+    "delay_rate": 0.4972,
+    "carriers": [
+     "B6"
+    ]
+   },
+   "PSP": {
+    "distance": 2378,
+    "air_time": 330,
+    "flights": 18,
+    "delay_rate": 0.3333,
+    "carriers": [
+     "VX"
+    ]
+   },
+   "PWM": {
+    "distance": 273,
+    "air_time": 48,
+    "flights": 1285,
+    "delay_rate": 0.3735,
+    "carriers": [
+     "B6"
+    ]
+   },
+   "RDU": {
+    "distance": 427,
+    "air_time": 71,
+    "flights": 2983,
+    "delay_rate": 0.4237,
+    "carriers": [
+     "9E",
+     "B6",
+     "MQ"
+    ]
+   },
+   "RIC": {
+    "distance": 288,
+    "air_time": 56,
+    "flights": 236,
+    "delay_rate": 0.4068,
+    "carriers": [
+     "9E"
+    ]
+   },
+   "ROC": {
+    "distance": 264,
+    "air_time": 51,
+    "flights": 1654,
+    "delay_rate": 0.3881,
+    "carriers": [
+     "9E",
+     "B6"
+    ]
+   },
+   "RSW": {
+    "distance": 1074,
+    "air_time": 159,
+    "flights": 1326,
+    "delay_rate": 0.454,
+    "carriers": [
+     "B6",
+     "DL"
+    ]
+   },
+   "SAN": {
+    "distance": 2446,
+    "air_time": 325,
+    "flights": 1584,
+    "delay_rate": 0.4085,
+    "carriers": [
+     "AA",
+     "B6",
+     "DL"
+    ]
+   },
+   "SAT": {
+    "distance": 1587,
+    "air_time": 216,
+    "flights": 336,
+    "delay_rate": 0.372,
+    "carriers": [
+     "9E",
+     "DL"
+    ]
+   },
+   "SDF": {
+    "distance": 662,
+    "air_time": 103,
+    "flights": 40,
+    "delay_rate": 0.425,
+    "carriers": [
+     "9E"
+    ]
+   },
+   "SEA": {
+    "distance": 2422,
+    "air_time": 328,
+    "flights": 2075,
+    "delay_rate": 0.3041,
+    "carriers": [
+     "AA",
+     "B6",
+     "DL"
+    ]
+   },
+   "SFO": {
+    "distance": 2586,
+    "air_time": 347,
+    "flights": 8109,
+    "delay_rate": 0.3674,
+    "carriers": [
+     "AA",
+     "B6",
+     "DL",
+     "UA",
+     "VX"
+    ]
+   },
+   "SJC": {
+    "distance": 2569,
+    "air_time": 347,
+    "flights": 328,
+    "delay_rate": 0.378,
+    "carriers": [
+     "B6",
+     "VX"
+    ]
+   },
+   "SJU": {
+    "distance": 1598,
+    "air_time": 196,
+    "flights": 4710,
+    "delay_rate": 0.3839,
+    "carriers": [
+     "AA",
+     "B6",
+     "DL"
+    ]
+   },
+   "SLC": {
+    "distance": 1990,
+    "air_time": 274,
+    "flights": 2100,
+    "delay_rate": 0.3295,
+    "carriers": [
+     "B6",
+     "DL"
+    ]
+   },
+   "SMF": {
+    "distance": 2521,
+    "air_time": 337,
+    "flights": 282,
+    "delay_rate": 0.5319,
+    "carriers": [
+     "B6"
+    ]
+   },
+   "SRQ": {
+    "distance": 1041,
+    "air_time": 151,
+    "flights": 472,
+    "delay_rate": 0.3453,
+    "carriers": [
+     "B6"
+    ]
+   },
+   "STL": {
+    "distance": 892,
+    "air_time": 129,
+    "flights": 1,
+    "delay_rate": 0.0,
+    "carriers": [
+     "DL"
+    ]
+   },
+   "STT": {
+    "distance": 1623,
+    "air_time": 202,
+    "flights": 330,
+    "delay_rate": 0.2909,
+    "carriers": [
+     "AA",
+     "DL"
+    ]
+   },
+   "SYR": {
+    "distance": 209,
+    "air_time": 44,
+    "flights": 1292,
+    "delay_rate": 0.4009,
+    "carriers": [
+     "9E",
+     "B6"
+    ]
+   },
+   "TPA": {
+    "distance": 1005,
+    "air_time": 143,
+    "flights": 2949,
+    "delay_rate": 0.4198,
+    "carriers": [
+     "9E",
+     "AA",
+     "B6",
+     "DL",
+     "MQ"
+    ]
+   }
+  },
+  "LGA": {
+   "ATL": {
+    "distance": 762,
+    "air_time": 112,
+    "flights": 10041,
+    "delay_rate": 0.4855,
+    "carriers": [
+     "DL",
+     "EV",
+     "FL",
+     "MQ",
+     "WN"
+    ]
+   },
+   "AVL": {
+    "distance": 599,
+    "air_time": 91,
+    "flights": 10,
+    "delay_rate": 0.2,
+    "carriers": [
+     "9E"
+    ]
+   },
+   "BGR": {
+    "distance": 378,
+    "air_time": 54,
+    "flights": 358,
+    "delay_rate": 0.3827,
+    "carriers": [
+     "EV"
+    ]
+   },
+   "BHM": {
+    "distance": 866,
+    "air_time": 121,
+    "flights": 268,
+    "delay_rate": 0.4515,
+    "carriers": [
+     "EV"
+    ]
+   },
+   "BNA": {
+    "distance": 764,
+    "air_time": 112,
+    "flights": 3149,
+    "delay_rate": 0.4665,
+    "carriers": [
+     "9E",
+     "EV",
+     "MQ",
+     "WN"
+    ]
+   },
+   "BOS": {
+    "distance": 184,
+    "air_time": 37,
+    "flights": 4002,
+    "delay_rate": 0.2771,
+    "carriers": [
+     "US"
+    ]
+   },
+   "BTV": {
+    "distance": 258,
+    "air_time": 42,
+    "flights": 277,
+    "delay_rate": 0.3285,
+    "carriers": [
+     "9E",
+     "EV"
+    ]
+   },
+   "BUF": {
+    "distance": 292,
+    "air_time": 50,
+    "flights": 122,
+    "delay_rate": 0.2541,
+    "carriers": [
+     "9E",
+     "DL",
+     "EV"
+    ]
+   },
+   "BWI": {
+    "distance": 185,
+    "air_time": 40,
+    "flights": 15,
+    "delay_rate": 0.2667,
+    "carriers": [
+     "WN"
+    ]
+   },
+   "CAE": {
+    "distance": 617,
+    "air_time": 99,
+    "flights": 12,
+    "delay_rate": 0.6667,
+    "carriers": [
+     "9E",
+     "EV"
+    ]
+   },
+   "CAK": {
+    "distance": 397,
+    "air_time": 63,
+    "flights": 842,
+    "delay_rate": 0.5368,
+    "carriers": [
+     "FL"
+    ]
+   },
+   "CHO": {
+    "distance": 305,
+    "air_time": 50,
+    "flights": 46,
+    "delay_rate": 0.413,
+    "carriers": [
+     "EV"
+    ]
+   },
+   "CHS": {
+    "distance": 641,
+    "air_time": 91,
+    "flights": 474,
+    "delay_rate": 0.365,
+    "carriers": [
+     "9E",
+     "EV"
+    ]
+   },
+   "CLE": {
+    "distance": 419,
+    "air_time": 69,
+    "flights": 1998,
+    "delay_rate": 0.4054,
+    "carriers": [
+     "9E",
+     "EV",
+     "MQ",
+     "OO",
+     "UA"
+    ]
+   },
+   "CLT": {
+    "distance": 544,
+    "air_time": 85,
+    "flights": 5961,
+    "delay_rate": 0.4234,
+    "carriers": [
+     "9E",
+     "EV",
+     "MQ",
+     "US",
+     "YV"
+    ]
+   },
+   "CMH": {
+    "distance": 479,
+    "air_time": 77,
+    "flights": 1935,
+    "delay_rate": 0.3907,
+    "carriers": [
+     "9E",
+     "EV",
+     "MQ"
+    ]
+   },
+   "CRW": {
+    "distance": 444,
+    "air_time": 74,
+    "flights": 134,
+    "delay_rate": 0.4776,
+    "carriers": [
+     "MQ"
+    ]
+   },
+   "CVG": {
+    "distance": 585,
+    "air_time": 93,
+    "flights": 260,
+    "delay_rate": 0.3462,
+    "carriers": [
+     "9E",
+     "DL",
+     "EV"
+    ]
+   },
+   "DAY": {
+    "distance": 549,
+    "air_time": 84,
+    "flights": 342,
+    "delay_rate": 0.2661,
+    "carriers": [
+     "9E"
+    ]
+   },
+   "DCA": {
+    "distance": 214,
+    "air_time": 44,
+    "flights": 4468,
+    "delay_rate": 0.4201,
+    "carriers": [
+     "US"
+    ]
+   },
+   "DEN": {
+    "distance": 1620,
+    "air_time": 227,
+    "flights": 3657,
+    "delay_rate": 0.4329,
+    "carriers": [
+     "DL",
+     "F9",
+     "UA",
+     "WN"
+    ]
+   },
+   "DFW": {
+    "distance": 1389,
+    "air_time": 199,
+    "flights": 4682,
+    "delay_rate": 0.3375,
+    "carriers": [
+     "9E",
+     "AA",
+     "EV"
+    ]
+   },
+   "DSM": {
+    "distance": 1031,
+    "air_time": 144,
+    "flights": 133,
+    "delay_rate": 0.4511,
+    "carriers": [
+     "9E",
+     "EV"
+    ]
+   },
+   "DTW": {
+    "distance": 502,
+    "air_time": 83,
+    "flights": 4908,
+    "delay_rate": 0.3252,
+    "carriers": [
+     "9E",
+     "DL",
+     "EV",
+     "MQ"
+    ]
+   },
+   "EYW": {
+    "distance": 1207,
+    "air_time": 173,
+    "flights": 17,
+    "delay_rate": 0.5882,
+    "carriers": [
+     "DL"
+    ]
+   },
+   "FLL": {
+    "distance": 1076,
+    "air_time": 151,
+    "flights": 3947,
+    "delay_rate": 0.436,
+    "carriers": [
+     "B6",
+     "DL"
+    ]
+   },
+   "GRR": {
+    "distance": 618,
+    "air_time": 101,
+    "flights": 40,
+    "delay_rate": 0.375,
+    "carriers": [
+     "9E",
+     "EV"
+    ]
+   },
+   "GSO": {
+    "distance": 461,
+    "air_time": 70,
+    "flights": 447,
+    "delay_rate": 0.3512,
+    "carriers": [
+     "9E",
+     "EV"
+    ]
+   },
+   "GSP": {
+    "distance": 610,
+    "air_time": 94,
+    "flights": 98,
+    "delay_rate": 0.3776,
+    "carriers": [
+     "9E",
+     "EV"
+    ]
+   },
+   "HOU": {
+    "distance": 1428,
+    "air_time": 199,
+    "flights": 424,
+    "delay_rate": 0.3656,
+    "carriers": [
+     "WN"
+    ]
+   },
+   "IAD": {
+    "distance": 229,
+    "air_time": 48,
+    "flights": 1659,
+    "delay_rate": 0.4533,
+    "carriers": [
+     "9E",
+     "EV",
+     "OO",
+     "YV"
+    ]
+   },
+   "IAH": {
+    "distance": 1416,
+    "air_time": 200,
+    "flights": 2891,
+    "delay_rate": 0.3629,
+    "carriers": [
+     "UA"
+    ]
+   },
+   "ILM": {
+    "distance": 500,
+    "air_time": 74,
+    "flights": 107,
+    "delay_rate": 0.3832,
+    "carriers": [
+     "EV"
+    ]
+   },
+   "IND": {
+    "distance": 660,
+    "air_time": 101,
+    "flights": 82,
+    "delay_rate": 0.2683,
+    "carriers": [
+     "9E",
+     "DL",
+     "EV"
+    ]
+   },
+   "JAX": {
+    "distance": 833,
+    "air_time": 120,
+    "flights": 175,
+    "delay_rate": 0.3657,
+    "carriers": [
+     "9E",
+     "DL",
+     "EV"
+    ]
+   },
+   "LEX": {
+    "distance": 604,
+    "air_time": 90,
+    "flights": 1,
+    "delay_rate": 0.0,
+    "carriers": [
+     "9E"
+    ]
+   },
+   "MCI": {
+    "distance": 1107,
+    "air_time": 156,
+    "flights": 355,
+    "delay_rate": 0.3239,
+    "carriers": [
+     "9E",
+     "DL",
+     "EV"
+    ]
+   },
+   "MCO": {
+    "distance": 950,
+    "air_time": 133,
+    "flights": 3645,
+    "delay_rate": 0.4027,
+    "carriers": [
+     "B6",
+     "DL"
+    ]
+   },
+   "MDW": {
+    "distance": 725,
+    "air_time": 112,
+    "flights": 2037,
+    "delay_rate": 0.459,
+    "carriers": [
+     "WN"
+    ]
+   },
+   "MEM": {
+    "distance": 963,
+    "air_time": 139,
+    "flights": 840,
+    "delay_rate": 0.3238,
+    "carriers": [
+     "9E",
+     "DL",
+     "EV"
+    ]
+   },
+   "MHT": {
+    "distance": 195,
+    "air_time": 35,
+    "flights": 108,
+    "delay_rate": 0.4815,
+    "carriers": [
+     "9E",
+     "EV"
+    ]
+   },
+   "MIA": {
+    "distance": 1096,
+    "air_time": 153,
+    "flights": 5702,
+    "delay_rate": 0.3334,
+    "carriers": [
+     "AA",
+     "DL"
+    ]
+   },
+   "MKE": {
+    "distance": 738,
+    "air_time": 112,
+    "flights": 1479,
+    "delay_rate": 0.4307,
+    "carriers": [
+     "9E",
+     "EV",
+     "FL",
+     "WN"
+    ]
+   },
+   "MSN": {
+    "distance": 812,
+    "air_time": 120,
+    "flights": 211,
+    "delay_rate": 0.4313,
+    "carriers": [
+     "9E",
+     "EV"
+    ]
+   },
+   "MSP": {
+    "distance": 1020,
+    "air_time": 148,
+    "flights": 3620,
+    "delay_rate": 0.4019,
+    "carriers": [
+     "9E",
+     "DL",
+     "MQ"
+    ]
+   },
+   "MSY": {
+    "distance": 1183,
+    "air_time": 165,
+    "flights": 998,
+    "delay_rate": 0.3507,
+    "carriers": [
+     "9E",
+     "DL",
+     "EV"
+    ]
+   },
+   "MYR": {
+    "distance": 563,
+    "air_time": 84,
+    "flights": 3,
+    "delay_rate": 0.6667,
+    "carriers": [
+     "EV"
+    ]
+   },
+   "OMA": {
+    "distance": 1148,
+    "air_time": 161,
+    "flights": 91,
+    "delay_rate": 0.4066,
+    "carriers": [
+     "DL",
+     "EV"
+    ]
+   },
+   "ORD": {
+    "distance": 733,
+    "air_time": 114,
+    "flights": 8507,
+    "delay_rate": 0.3287,
+    "carriers": [
+     "AA",
+     "OO",
+     "UA"
+    ]
+   },
+   "ORF": {
+    "distance": 296,
+    "air_time": 51,
+    "flights": 195,
+    "delay_rate": 0.3641,
+    "carriers": [
+     "9E",
+     "EV"
+    ]
+   },
+   "PBI": {
+    "distance": 1035,
+    "air_time": 145,
+    "flights": 2429,
+    "delay_rate": 0.4018,
+    "carriers": [
+     "AA",
+     "B6",
+     "DL",
+     "EV"
+    ]
+   },
+   "PHL": {
+    "distance": 96,
+    "air_time": 36,
+    "flights": 598,
+    "delay_rate": 0.4264,
+    "carriers": [
+     "US",
+     "YV"
+    ]
+   },
+   "PIT": {
+    "distance": 335,
+    "air_time": 57,
+    "flights": 1012,
+    "delay_rate": 0.4032,
+    "carriers": [
+     "9E",
+     "DL",
+     "EV"
+    ]
+   },
+   "PWM": {
+    "distance": 269,
+    "air_time": 44,
+    "flights": 273,
+    "delay_rate": 0.337,
+    "carriers": [
+     "DL",
+     "EV"
+    ]
+   },
+   "RDU": {
+    "distance": 431,
+    "air_time": 70,
+    "flights": 3370,
+    "delay_rate": 0.446,
+    "carriers": [
+     "9E",
+     "EV",
+     "MQ"
+    ]
+   },
+   "RIC": {
+    "distance": 292,
+    "air_time": 54,
+    "flights": 495,
+    "delay_rate": 0.3657,
+    "carriers": [
+     "9E",
+     "EV"
+    ]
+   },
+   "ROC": {
+    "distance": 254,
+    "air_time": 45,
+    "flights": 216,
+    "delay_rate": 0.3287,
+    "carriers": [
+     "9E",
+     "EV"
+    ]
+   },
+   "RSW": {
+    "distance": 1080,
+    "air_time": 159,
+    "flights": 752,
+    "delay_rate": 0.4694,
+    "carriers": [
+     "9E",
+     "B6",
+     "DL"
+    ]
+   },
+   "SAV": {
+    "distance": 722,
+    "air_time": 102,
+    "flights": 68,
+    "delay_rate": 0.2206,
+    "carriers": [
+     "EV"
+    ]
+   },
+   "SBN": {
+    "distance": 651,
+    "air_time": 94,
+    "flights": 6,
+    "delay_rate": 0.5,
+    "carriers": [
+     "EV"
+    ]
+   },
+   "SDF": {
+    "distance": 659,
+    "air_time": 105,
+    "flights": 210,
+    "delay_rate": 0.2524,
+    "carriers": [
+     "9E"
+    ]
+   },
+   "SRQ": {
+    "distance": 1047,
+    "air_time": 150,
+    "flights": 729,
+    "delay_rate": 0.4211,
+    "carriers": [
+     "9E",
+     "B6",
+     "DL",
+     "EV"
+    ]
+   },
+   "STL": {
+    "distance": 888,
+    "air_time": 132,
+    "flights": 1767,
+    "delay_rate": 0.3707,
+    "carriers": [
+     "AA",
+     "EV",
+     "MQ",
+     "WN"
+    ]
+   },
+   "SYR": {
+    "distance": 198,
+    "air_time": 38,
+    "flights": 269,
+    "delay_rate": 0.3755,
+    "carriers": [
+     "9E",
+     "EV"
+    ]
+   },
+   "TPA": {
+    "distance": 1010,
+    "air_time": 144,
+    "flights": 2126,
+    "delay_rate": 0.4055,
+    "carriers": [
+     "B6",
+     "DL"
+    ]
+   },
+   "TVC": {
+    "distance": 655,
+    "air_time": 93,
+    "flights": 73,
+    "delay_rate": 0.3699,
+    "carriers": [
+     "EV",
+     "MQ"
+    ]
+   },
+   "TYS": {
+    "distance": 647,
+    "air_time": 96,
+    "flights": 265,
+    "delay_rate": 0.4075,
+    "carriers": [
+     "9E"
+    ]
+   },
+   "XNA": {
+    "distance": 1147,
+    "air_time": 171,
+    "flights": 709,
+    "delay_rate": 0.4556,
+    "carriers": [
+     "EV",
+     "MQ"
+    ]
+   }
+  }
+ },
+ "stats": {
+  "flights": 336776,
+  "delay_rate": 0.4063,
+  "routes": 223,
+  "by_month": [
+   0.4224,
+   0.4278,
+   0.3913,
+   0.4543,
+   0.3622,
+   0.4613,
+   0.4702,
+   0.4044,
+   0.2534,
+   0.3432,
+   0.3574,
+   0.5327
+  ],
+  "by_hour": {
+   "5": {
+    "rate": 0.2902,
+    "flights": 1940
+   },
+   "6": {
+    "rate": 0.2941,
+    "flights": 25447
+   },
+   "7": {
+    "rate": 0.272,
+    "flights": 22475
+   },
+   "8": {
+    "rate": 0.3291,
+    "flights": 26734
+   },
+   "9": {
+    "rate": 0.3384,
+    "flights": 19931
+   },
+   "10": {
+    "rate": 0.3539,
+    "flights": 16370
+   },
+   "11": {
+    "rate": 0.3485,
+    "flights": 15689
+   },
+   "12": {
+    "rate": 0.3809,
+    "flights": 17744
+   },
+   "13": {
+    "rate": 0.4137,
+    "flights": 19457
+   },
+   "14": {
+    "rate": 0.4282,
+    "flights": 21022
+   },
+   "15": {
+    "rate": 0.474,
+    "flights": 23082
+   },
+   "16": {
+    "rate": 0.4604,
+    "flights": 22045
+   },
+   "17": {
+    "rate": 0.4894,
+    "flights": 23667
+   },
+   "18": {
+    "rate": 0.4856,
+    "flights": 21072
+   },
+   "19": {
+    "rate": 0.4889,
+    "flights": 20507
+   },
+   "20": {
+    "rate": 0.4979,
+    "flights": 16061
+   },
+   "21": {
+    "rate": 0.5243,
+    "flights": 10503
+   },
+   "22": {
+    "rate": 0.4914,
+    "flights": 2558
+   },
+   "23": {
+    "rate": 0.5202,
+    "flights": 1042
+   }
+  },
+  "by_carrier": {
+   "9E": 0.3838,
+   "AA": 0.3351,
+   "AS": 0.2666,
+   "B6": 0.4368,
+   "DL": 0.3444,
+   "EV": 0.4791,
+   "F9": 0.5756,
+   "FL": 0.5969,
+   "HA": 0.2836,
+   "MQ": 0.467,
+   "OO": 0.3448,
+   "UA": 0.3846,
+   "US": 0.3706,
+   "VX": 0.3413,
+   "WN": 0.4404,
+   "YV": 0.4743
+  }
+ },
+ "metrics": {
+  "accuracy": 0.8257,
+  "precision": 0.8758,
+  "recall": 0.6844,
+  "f1": 0.7684,
+  "roc_auc": 0.8853,
+  "test_size": 67356,
+  "train_size": 269420,
+  "confusion_matrix": [
+   [
+    36140,
+    2761
+   ],
+   [
+    8980,
+    19475
+   ]
+  ]
+ },
+ "feature_means": {
+  "year": 2013.0,
+  "month": 6.55157,
+  "day": 15.717553,
+  "dep_time": 1349.557758,
+  "sched_dep_time": 1344.517593,
+  "dep_delay": 12.679868,
+  "arr_time": 1502.682587,
+  "sched_arr_time": 1537.069995,
+  "flight": 1971.642061,
+  "air_time": 150.670481,
+  "distance": 1039.754495,
+  "hour": 13.182663,
+  "minute": 26.251318,
+  "carrier_9E": 0.055007,
+  "carrier_AA": 0.097383,
+  "carrier_AS": 0.002175,
+  "carrier_B6": 0.161863,
+  "carrier_DL": 0.142543,
+  "carrier_EV": 0.160519,
+  "carrier_F9": 0.00203,
+  "carrier_FL": 0.009665,
+  "carrier_HA": 0.001002,
+  "carrier_MQ": 0.078777,
+  "carrier_OO": 8.5e-05,
+  "carrier_UA": 0.174579,
+  "carrier_US": 0.060805,
+  "carrier_VX": 0.015248,
+  "carrier_WN": 0.03656,
+  "carrier_YV": 0.001759,
+  "origin_EWR": 0.358522,
+  "origin_JFK": 0.330347,
+  "origin_LGA": 0.311131,
+  "dest_ABQ": 0.000776,
+  "dest_ACK": 0.000772,
+  "dest_ALB": 0.001266,
+  "dest_ANC": 2.2e-05,
+  "dest_ATL": 0.051047,
+  "dest_AUS": 0.00729,
+  "dest_AVL": 0.000783,
+  "dest_BDL": 0.001347,
+  "dest_BGR": 0.001151,
+  "dest_BHM": 0.000895,
+  "dest_BNA": 0.018729,
+  "dest_BOS": 0.045995,
+  "dest_BQN": 0.002654,
+  "dest_BTV": 0.00762,
+  "dest_BUF": 0.013845,
+  "dest_BUR": 0.001117,
+  "dest_BWI": 0.005356,
+  "dest_BZN": 9.7e-05,
+  "dest_CAE": 0.000334,
+  "dest_CAK": 0.002502,
+  "dest_CHO": 0.000163,
+  "dest_CHS": 0.008596,
+  "dest_CLE": 0.013663,
+  "dest_CLT": 0.041597,
+  "dest_CMH": 0.010649,
+  "dest_CRW": 0.000434,
+  "dest_CVG": 0.011688,
+  "dest_DAY": 0.004569,
+  "dest_DCA": 0.02884,
+  "dest_DEN": 0.021368,
+  "dest_DFW": 0.026104,
+  "dest_DSM": 0.001704,
+  "dest_DTW": 0.027641,
+  "dest_EGE": 0.000624,
+  "dest_EYW": 5.6e-05,
+  "dest_FLL": 0.035859,
+  "dest_GRR": 0.002301,
+  "dest_GSO": 0.004859,
+  "dest_GSP": 0.002613,
+  "dest_HDN": 5.2e-05,
+  "dest_HNL": 0.00209,
+  "dest_HOU": 0.006262,
+  "dest_IAD": 0.01671,
+  "dest_IAH": 0.021465,
+  "dest_ILM": 0.00033,
+  "dest_IND": 0.00625,
+  "dest_JAC": 7.4e-05,
+  "dest_JAX": 0.008181,
+  "dest_LAS": 0.017801,
+  "dest_LAX": 0.048181,
+  "dest_LEX": 4e-06,
+  "dest_LGA": 4e-06,
+  "dest_LGB": 0.00196,
+  "dest_MCI": 0.00598,
+  "dest_MCO": 0.041738,
+  "dest_MDW": 0.012271,
+  "dest_MEM": 0.005259,
+  "dest_MHT": 0.00288,
+  "dest_MIA": 0.035131,
+  "dest_MKE": 0.008284,
+  "dest_MSN": 0.001663,
+  "dest_MSP": 0.021264,
+  "dest_MSY": 0.011332,
+  "dest_MTJ": 3.3e-05,
+  "dest_MVY": 0.000657,
+  "dest_MYR": 0.000163,
+  "dest_OAK": 0.00092,
+  "dest_OKC": 0.001036,
+  "dest_OMA": 0.002483,
+  "dest_ORD": 0.051488,
+  "dest_ORF": 0.004621,
+  "dest_PBI": 0.019434,
+  "dest_PDX": 0.004005,
+  "dest_PHL": 0.004855,
+  "dest_PHX": 0.013707,
+  "dest_PIT": 0.0085,
+  "dest_PSE": 0.001073,
+  "dest_PSP": 5.9e-05,
+  "dest_PVD": 0.001084,
+  "dest_PWM": 0.007074,
+  "dest_RDU": 0.024608,
+  "dest_RIC": 0.007227,
+  "dest_ROC": 0.007234,
+  "dest_RSW": 0.010563,
+  "dest_SAN": 0.008054,
+  "dest_SAT": 0.002008,
+  "dest_SAV": 0.002338,
+  "dest_SBN": 3.3e-05,
+  "dest_SDF": 0.003463,
+  "dest_SEA": 0.011729,
+  "dest_SFO": 0.039511,
+  "dest_SJC": 0.000976,
+  "dest_SJU": 0.017244,
+  "dest_SLC": 0.007293,
+  "dest_SMF": 0.000869,
+  "dest_SNA": 0.002424,
+  "dest_SRQ": 0.003526,
+  "dest_STL": 0.012883,
+  "dest_STT": 0.001559,
+  "dest_SYR": 0.005174,
+  "dest_TPA": 0.021873,
+  "dest_TUL": 0.000887,
+  "dest_TVC": 0.000319,
+  "dest_TYS": 0.001822,
+  "dest_XNA": 0.003099,
+  "time_hour_year": 2013.000249,
+  "time_hour_month": 6.552227,
+  "time_hour_day": 15.721294,
+  "time_hour_hour": 14.785695,
+  "time_hour_minute": 0.0
+ }
+}

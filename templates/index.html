@@ -1,114 +1,463 @@
+{%- macro error(name) -%}
+<p class="field__error" data-error-for="{{ name }}">{{ errors.get(name, '') }}</p>
+{%- endmacro -%}
+{%- macro value(name, default='') -%}{{ form.get(name, default) }}{%- endmacro -%}
+{% set m = ref.metrics %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flight Delay Prediction</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flight Delay Predictor</title>
+  <meta name="description" content="Estimate whether a flight from New York will land late, with a machine learning model trained on 336,776 real flights.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='%232a78d6' d='M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z'/></svg>">
+  <script>
+    // Thème choisi avant le rendu pour éviter un flash de couleurs
+    try {
+      const saved = localStorage.getItem("theme");
+      if (saved) document.documentElement.dataset.theme = saved;
+    } catch (e) {}
+  </script>
 </head>
 <body>
-    <div class="container">
-        <div class="card">
-            <div class="card-header">
-                Flight Delay Prediction
-            </div>
-            <div class="card-body">
-                <form action="/" method="post">
-                    <div class="form-group">
-                        <label for="year">Year:</label>
-                        <input type="text" id="year" name="year" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="month">Month:</label>
-                        <input type="text" id="month" name="month" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="day">Day:</label>
-                        <input type="text" id="day" name="day" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="dep_time">Departure Time (HHMM format):</label>
-                        <input type="text" id="dep_time" name="dep_time" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="sched_dep_time">Scheduled Departure Time (HHMM format):</label>
-                        <input type="text" id="sched_dep_time" name="sched_dep_time" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="dep_delay">Departure Delay (in minutes):</label>
-                        <input type="text" id="dep_delay" name="dep_delay" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="arr_time">Arrival Time (HHMM format):</label>
-                        <input type="text" id="arr_time" name="arr_time" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="sched_arr_time">Scheduled Arrival Time (HHMM format):</label>
-                        <input type="text" id="sched_arr_time" name="sched_arr_time" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="carrier">Carrier:</label>
-                        <input type="text" id="carrier" name="carrier" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="flight">Flight Number:</label>
-                        <input type="text" id="flight" name="flight" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="tailnum">Tail Number:</label>
-                        <input type="text" id="tailnum" name="tailnum" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="origin">Origin Airport:</label>
-                        <input type="text" id="origin" name="origin" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="dest">Destination Airport:</label>
-                        <input type="text" id="dest" name="dest" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="air_time">Air Time (in minutes):</label>
-                        <input type="text" id="air_time" name="air_time" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="distance">Distance (in miles):</label>
-                        <input type="text" id="distance" name="distance" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="hour">Scheduled Departure Hour:</label>
-                        <input type="text" id="hour" name="hour" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="minute">Scheduled Departure Minute:</label>
-                        <input type="text" id="minute" name="minute" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="time_hour">Scheduled Departure Date:</label>
-                        <input type="text" id="time_hour" name="time_hour" class="form-control" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Predict</button>
-                </form>
+  <svg width="0" height="0" class="sprite" aria-hidden="true">
+    <symbol id="i-plane" viewBox="0 0 24 24"><path fill="currentColor" d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.5"/><path d="m7.5 12.5 3 3 6-6.5"/></g></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v6"/><circle cx="12" cy="16.6" r=".6" fill="currentColor"/></g></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></g></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 3l1.9 5.6L19.5 10.5l-5.6 1.9L12 18l-1.9-5.6L4.5 10.5l5.6-1.9z"/></symbol>
+    <symbol id="i-route" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="6" r="2.5"/><path d="M8.5 18H15a3.5 3.5 0 0 0 0-7H9a3.5 3.5 0 0 1 0-7h6.5"/></g></symbol>
+    <symbol id="i-bars" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M4 20h16M7 16v-5m5 5V6m5 10v-8"/></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m8 7-5 5 5 5m8-10 5 5-5 5M14 4l-4 16"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5l3 2"/></g></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 3 4.5 6v5.5c0 4.5 3.2 8 7.5 9.5 4.3-1.5 7.5-5 7.5-9.5V6z"/></symbol>
+  </svg>
 
-                {% if prediction is not none %}
-                <div class="result mt-3">
-                    {% if prediction == 1 %}
-                    The flight will be delayed !
-                    {% else %}
-                    The flight will not be delayed !
-                    {% endif %}
-                </div>
-                {% endif %}
-            </div>
-        </div>
+  <header class="topbar">
+    <div class="wrap topbar__inner">
+      <a class="brand" href="#top">
+        <span class="brand__mark"><svg class="icon" aria-hidden="true"><use href="#i-plane"/></svg></span>
+        Flight Delay Predictor
+      </a>
+      <nav class="nav" aria-label="Sections">
+        <a href="#predict">Predict</a>
+        <a href="#insights">Insights</a>
+        <a href="#model">Model</a>
+        <a href="#api">API</a>
+      </nav>
+      <button class="theme-toggle" type="button" aria-label="Switch color theme">
+        <svg class="icon icon--sun" aria-hidden="true"><use href="#i-sun"/></svg>
+        <svg class="icon icon--moon" aria-hidden="true"><use href="#i-moon"/></svg>
+      </button>
     </div>
+  </header>
 
-    <footer>
-        <p>&copy; 2024 Flight Delay Prediction System</p>
-    </footer>
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero__inner">
+        <div class="hero__text">
+          <p class="eyebrow">Machine learning · New York flights</p>
+          <h1>Will this flight <span class="accent">land late?</span></h1>
+          <p class="lead">
+            A logistic regression model trained on every flight that left EWR, JFK and LGA in 2013.
+            Enter a flight and get the odds of a late arrival in a second, along with the reasons behind them.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#predict">
+              Try a prediction
+              <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg>
+            </a>
+            <a class="btn btn--ghost" href="#model">How accurate is it?</a>
+          </div>
+        </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <div class="hero__art" aria-hidden="true">
+          <svg viewBox="0 0 360 220" class="flightpath">
+            <path id="arc" d="M30 180 C 110 30, 250 30, 330 150" />
+            <circle cx="30" cy="180" r="6"/>
+            <circle cx="330" cy="150" r="6"/>
+            <text x="30" y="206" text-anchor="middle">NYC</text>
+            <text x="330" y="176" text-anchor="middle">LAX</text>
+          </svg>
+          <span class="flightpath__plane"><svg class="icon"><use href="#i-plane"/></svg></span>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <ul class="stats">
+          <li><strong>{{ "{:,}".format(ref.stats.flights) }}</strong><span>real flights studied</span></li>
+          <li><strong>{{ (m.accuracy * 100)|round(1) }}%</strong><span>accuracy on unseen flights</span></li>
+          <li><strong>{{ "%.2f"|format(m.roc_auc) }}</strong><span>ROC-AUC score</span></li>
+          <li><strong>{{ ref.stats.routes }}</strong><span>routes, {{ ref.airlines|length }} airlines</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="predict">
+      <div class="wrap">
+        <div class="section__head">
+          <h2>Run a prediction</h2>
+          <p>Only the route and the schedule are required. Anything left empty is estimated from 2013 data.</p>
+        </div>
+
+        <div class="predictor">
+          <form class="card form" method="post" action="{{ url_for('home') }}#predict" id="flight-form">
+            <div class="examples">
+              <span>Try an example</span>
+              <button type="button" class="chip" data-example="plan">Planning ahead · JFK → LAX</button>
+              <button type="button" class="chip" data-example="late">Late departure · EWR → ORD</button>
+              <button type="button" class="chip" data-example="close">Close call · LGA → ATL</button>
+            </div>
+
+            <fieldset class="step">
+              <legend><span class="step__num">1</span> Route</legend>
+              <div class="grid">
+                <div class="field field--wide">
+                  <span class="field__label">From</span>
+                  <div class="segmented" role="radiogroup" aria-label="Departure airport">
+                    {% for code in ref.origins %}
+                    <label>
+                      <input type="radio" name="origin" value="{{ code }}" {{ 'checked' if value('origin', 'JFK') == code }}>
+                      <span><b>{{ code }}</b><small>{{ ref.airports[code]|replace(' Intl', '')|replace(' Liberty', '') }}</small></span>
+                    </label>
+                    {% endfor %}
+                  </div>
+                  {{ error('origin') }}
+                </div>
+
+                <div class="field field--wide">
+                  <label class="field__label" for="dest">To</label>
+                  <select id="dest" name="dest" required>
+                    <option value="">Choose a destination</option>
+                    {% for code, name in ref.airports|dictsort %}
+                    {% if code not in ref.origins %}
+                    <option value="{{ code }}" {{ 'selected' if value('dest') == code }}>{{ code }} · {{ name }}</option>
+                    {% endif %}
+                    {% endfor %}
+                  </select>
+                  {{ error('dest') }}
+                </div>
+
+                <div class="field">
+                  <label class="field__label" for="carrier">Airline</label>
+                  <select id="carrier" name="carrier" required>
+                    <option value="">Choose an airline</option>
+                    {% for code, name in ref.airlines|dictsort(by='value') %}
+                    <option value="{{ code }}" {{ 'selected' if value('carrier') == code }}>{{ name|replace(' Inc.', '')|replace(' Co.', '') }} ({{ code }})</option>
+                    {% endfor %}
+                  </select>
+                  {{ error('carrier') }}
+                </div>
+
+                <div class="field">
+                  <label class="field__label" for="flight">Flight number <em>optional</em></label>
+                  <input id="flight" name="flight" type="number" min="1" max="9999" inputmode="numeric" placeholder="e.g. 1545" value="{{ value('flight') }}">
+                  {{ error('flight') }}
+                </div>
+              </div>
+
+              <div class="route-info" id="route-info" hidden></div>
+            </fieldset>
+
+            <fieldset class="step">
+              <legend><span class="step__num">2</span> Schedule</legend>
+              <div class="grid grid--3">
+                <div class="field">
+                  <label class="field__label" for="date">Date</label>
+                  <input id="date" name="date" type="date" required value="{{ value('date') }}">
+                  {{ error('date') }}
+                </div>
+                <div class="field">
+                  <label class="field__label" for="sched_dep_time">Departure</label>
+                  <input id="sched_dep_time" name="sched_dep_time" type="time" required value="{{ value('sched_dep_time') }}">
+                  {{ error('sched_dep_time') }}
+                </div>
+                <div class="field">
+                  <label class="field__label" for="sched_arr_time">Arrival <em>local</em></label>
+                  <input id="sched_arr_time" name="sched_arr_time" type="time" required value="{{ value('sched_arr_time') }}">
+                  {{ error('sched_arr_time') }}
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="step">
+              <legend><span class="step__num">3</span> What actually happened <em>optional</em></legend>
+              <div class="grid">
+                <div class="field">
+                  <label class="field__label" for="dep_time">Actual departure</label>
+                  <input id="dep_time" name="dep_time" type="time" value="{{ value('dep_time') }}">
+                  <p class="field__hint" id="delay-readout">Leave empty if the plane hasn't left yet.</p>
+                  {{ error('dep_time') }}
+                </div>
+                <div class="field">
+                  <label class="field__label" for="arr_time">Actual arrival</label>
+                  <input id="arr_time" name="arr_time" type="time" value="{{ value('arr_time') }}">
+                  <p class="field__hint">Estimated from the departure delay when empty.</p>
+                  {{ error('arr_time') }}
+                </div>
+                <div class="field">
+                  <label class="field__label" for="air_time">Air time <em>minutes</em></label>
+                  <input id="air_time" name="air_time" type="number" min="10" max="900" inputmode="numeric" placeholder="Typical for the route" value="{{ value('air_time') }}">
+                  {{ error('air_time') }}
+                </div>
+                <div class="field">
+                  <label class="field__label" for="distance">Distance <em>miles</em></label>
+                  <input id="distance" name="distance" type="number" min="10" max="6000" inputmode="numeric" placeholder="Taken from the route" value="{{ value('distance') }}">
+                  {{ error('distance') }}
+                </div>
+              </div>
+            </fieldset>
+
+            <div class="form__actions">
+              <button class="btn btn--primary btn--lg" type="submit">
+                <span class="btn__label">Predict arrival</span>
+                <span class="spinner" aria-hidden="true"></span>
+              </button>
+              <button class="btn btn--ghost" type="reset">Clear</button>
+            </div>
+          </form>
+
+          <aside class="card output" id="output" aria-live="polite">
+            {% if result %}
+              {% include "_result.html" %}
+            {% else %}
+              <div class="empty">
+                <div class="empty__icon"><svg class="icon" aria-hidden="true"><use href="#i-plane"/></svg></div>
+                <h3>Ready for boarding</h3>
+                <p>Fill in a flight or pick one of the examples. The result shows up here with the odds, the main reasons and the route's track record.</p>
+              </div>
+            {% endif %}
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="features">
+      <div class="wrap">
+        <div class="section__head">
+          <h2>What it does</h2>
+          <p>More than a yes or no.</p>
+        </div>
+        <ul class="features">
+          <li>
+            <span class="features__icon"><svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg></span>
+            <h3>Explains each answer</h3>
+            <p>Every prediction comes with the factors that pushed it toward late or on time, read straight from the model's weights.</p>
+          </li>
+          <li>
+            <span class="features__icon"><svg class="icon" aria-hidden="true"><use href="#i-route"/></svg></span>
+            <h3>Knows the routes</h3>
+            <p>Distance, typical air time, airlines and past delay rates for {{ ref.stats.routes }} routes fill in automatically.</p>
+          </li>
+          <li>
+            <span class="features__icon"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg></span>
+            <h3>Works before takeoff</h3>
+            <p>No actual times yet? Enter the schedule alone and the missing values are estimated, with a note saying so.</p>
+          </li>
+          <li>
+            <span class="features__icon"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg></span>
+            <h3>Honest numbers</h3>
+            <p>Every score on this page was measured on {{ "{:,}".format(m.test_size) }} flights the model never saw during training.</p>
+          </li>
+          <li>
+            <span class="features__icon"><svg class="icon" aria-hidden="true"><use href="#i-code"/></svg></span>
+            <h3>JSON API</h3>
+            <p>The same model is one POST request away, ready for scripts, notebooks or other apps.</p>
+          </li>
+          <li>
+            <span class="features__icon"><svg class="icon" aria-hidden="true"><use href="#i-moon"/></svg></span>
+            <h3>Light and dark</h3>
+            <p>Follows the system theme, works on phones, and still runs with JavaScript turned off.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="insights">
+      <div class="wrap">
+        <div class="section__head">
+          <h2>When do delays happen?</h2>
+          <p>Share of 2013 flights that arrived after their scheduled time ({{ (ref.stats.delay_rate * 100)|round|int }}% overall).</p>
+        </div>
+
+        <div class="charts">
+          <figure class="card chart-card">
+            <figcaption>
+              <h3>By departure hour</h3>
+              <p>Delays pile up as the day goes on: late flights push back the ones after them.</p>
+            </figcaption>
+            <div class="chart" id="chart-hour"></div>
+            <details class="chart-table">
+              <summary>Show as table</summary>
+              <table>
+                <thead><tr><th>Hour</th><th>Flights</th><th>Late</th></tr></thead>
+                <tbody>
+                  {% for hour, row in ref.stats.by_hour.items() %}
+                  <tr><td>{{ hour }}:00</td><td>{{ "{:,}".format(row.flights) }}</td><td>{{ (row.rate * 100)|round(1) }}%</td></tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </details>
+          </figure>
+
+          <figure class="card chart-card">
+            <figcaption>
+              <h3>By month</h3>
+              <p>Summer storms and the holiday rush stand out. September was the calmest month.</p>
+            </figcaption>
+            <div class="chart" id="chart-month"></div>
+            <details class="chart-table">
+              <summary>Show as table</summary>
+              <table>
+                <thead><tr><th>Month</th><th>Late</th></tr></thead>
+                <tbody>
+                  {% for rate in ref.stats.by_month %}
+                  <tr><td>{{ ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"][loop.index0] }}</td><td>{{ (rate * 100)|round(1) }}%</td></tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </details>
+          </figure>
+
+          <figure class="card chart-card chart-card--wide">
+            <figcaption>
+              <h3>By airline</h3>
+              <p>Share of each airline's flights from New York that arrived late.</p>
+            </figcaption>
+            <div class="chart chart--bars" id="chart-carrier"></div>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="model">
+      <div class="wrap">
+        <div class="section__head">
+          <h2>Under the hood</h2>
+          <p>Scores measured on a held-out 20% of the data ({{ "{:,}".format(m.test_size) }} flights).</p>
+        </div>
+
+        <ul class="metrics">
+          <li><span>Accuracy</span><strong>{{ (m.accuracy * 100)|round(1) }}%</strong><small>of all answers are right</small></li>
+          <li><span>Precision</span><strong>{{ (m.precision * 100)|round(1) }}%</strong><small>of "late" calls were really late</small></li>
+          <li><span>Recall</span><strong>{{ (m.recall * 100)|round(1) }}%</strong><small>of late flights get caught</small></li>
+          <li><span>F1 score</span><strong>{{ "%.2f"|format(m.f1) }}</strong><small>balance of the two above</small></li>
+          <li><span>ROC-AUC</span><strong>{{ "%.2f"|format(m.roc_auc) }}</strong><small>ranking quality, 1.0 is perfect</small></li>
+        </ul>
+
+        <div class="model-grid">
+          <div class="card">
+            <h3>Confusion matrix</h3>
+            {% set cm = m.confusion_matrix %}
+            {% set cm_max = [cm[0][0], cm[0][1], cm[1][0], cm[1][1]]|max %}
+            <div class="matrix" role="table" aria-label="Confusion matrix">
+              <div role="row" class="matrix__row">
+                <span role="columnheader"></span>
+                <span role="columnheader">Predicted on time</span>
+                <span role="columnheader">Predicted late</span>
+              </div>
+              {% set rows = [
+                ("Actually on time", [(cm[0][0], "correct", true), (cm[0][1], "false alarm", false)]),
+                ("Actually late", [(cm[1][0], "missed", false), (cm[1][1], "correct", true)]),
+              ] %}
+              {% for label, cells in rows %}
+              <div role="row" class="matrix__row">
+                <span role="rowheader">{{ label }}</span>
+                {% for n, note, correct in cells %}
+                <span role="cell" class="matrix__cell {{ 'matrix__cell--ok' if correct else 'matrix__cell--miss' }}" style="--a: {{ (n / cm_max)|round(3) }}">
+                  <b>{{ "{:,}".format(n) }}</b>
+                  <small>{{ note }}</small>
+                </span>
+                {% endfor %}
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>From raw data to prediction</h3>
+            <ol class="pipeline">
+              <li><b>Data</b> 336,776 flights from the nycflights13 dataset, 19 columns each.</li>
+              <li><b>Cleaning</b> Missing times and delays filled with column averages.</li>
+              <li><b>Encoding</b> Airlines and airports one-hot encoded, timestamps split into parts: 142 inputs in total.</li>
+              <li><b>Model</b> Logistic regression from scikit-learn, trained on 80% of the flights.</li>
+              <li><b>Target</b> A flight counts as late when it lands even one minute after schedule.</li>
+            </ol>
+          </div>
+
+          <div class="card card--note">
+            <h3>Good to know</h3>
+            <ul class="notes">
+              <li>The model reads actual departure and arrival times, so it is most reliable once the plane is in the air. Before takeoff it leans on estimates.</li>
+              <li>It learned from 2013 traffic. Airlines, schedules and airports have changed since then.</li>
+              <li>Weather is not an input, although it drives many real delays.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="api">
+      <div class="wrap api">
+        <div class="section__head">
+          <h2>Use it from code</h2>
+          <p>Send the same fields as JSON. Times accept <code>"14:05"</code> or <code>1405</code>, and optional fields can be left out.</p>
+        </div>
+        <div class="api__grid">
+          <div class="code">
+            <div class="code__bar"><span>Request</span><button type="button" class="copy" data-copy="api-request">Copy</button></div>
+<pre id="api-request">curl -X POST {{ request.host_url }}api/predict \
+  -H "Content-Type: application/json" \
+  -d '{
+    "carrier": "UA",
+    "origin": "EWR",
+    "dest": "ORD",
+    "date": "2013-12-20",
+    "sched_dep_time": "18:00",
+    "sched_arr_time": "19:35",
+    "dep_time": "19:10"
+  }'</pre>
+          </div>
+          <div class="code">
+            <div class="code__bar"><span>Response</span></div>
+<pre>{
+  "delayed": true,
+  "probability": 0.9998,
+  "confidence": "high",
+  "verdict": "Likely to arrive late",
+  "factors": [
+    { "label": "Departure delay", "impact": 7.725 },
+    ...
+  ],
+  "route": { "origin": "EWR", "dest": "ORD", ... },
+  "assumptions": ["Distance taken from the route: 719 miles.", ...]
+}</pre>
+          </div>
+        </div>
+        <p class="api__more">Invalid fields come back with status 422 and an <code>errors</code> object. The list of airlines, airports and routes is at <a href="{{ url_for('api_routes') }}"><code>GET /api/routes</code></a>.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <p><b>Flight Delay Predictor</b> · AI project by Aya Aidi</p>
+      <p>Data: <a href="https://github.com/tidyverse/nycflights13" rel="noopener">nycflights13</a> · Built with Flask and scikit-learn</p>
+    </div>
+  </footer>
+
+  <script id="reference" type="application/json">{{ {
+    "airlines": ref.airlines,
+    "airports": ref.airports,
+    "routes": ref.routes,
+    "stats": ref.stats
+  }|tojson }}</script>
+  <script src="{{ url_for('static', filename='app.js') }}" defer></script>
 </body>
 </html>

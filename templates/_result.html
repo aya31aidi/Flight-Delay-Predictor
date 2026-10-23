@@ -1,0 +1,79 @@
+{% set late = result.delayed %}
+{# Jamais 0 % ni 100 % : le modèle n'est jamais absolument certain #}
+{% set pct = [[(result.probability * 100)|round(0)|int, 1]|max, 99]|min %}
+{% set strongest = result.factors|map(attribute='impact')|map('abs')|max if result.factors else 1 %}
+<article class="result {{ 'result--late' if late else 'result--ontime' }}" tabindex="-1">
+  <header class="result__head">
+    <div class="gauge" style="--p: {{ result.probability }}" role="img"
+         aria-label="{{ pct }} percent chance of arriving late">
+      <svg viewBox="0 0 120 120" aria-hidden="true">
+        <circle class="gauge__track" cx="60" cy="60" r="52"/>
+        <circle class="gauge__fill" cx="60" cy="60" r="52"/>
+      </svg>
+      <div class="gauge__value">
+        <strong>{{ pct }}<span>%</span></strong>
+        <small>chance of delay</small>
+      </div>
+    </div>
+
+    <div class="result__verdict">
+      <p class="status {{ 'status--late' if late else 'status--ontime' }}">
+        <svg class="icon" aria-hidden="true"><use href="#{{ 'i-alert' if late else 'i-check' }}"/></svg>
+        {{ result.verdict }}
+      </p>
+      <p class="result__confidence">
+        {% if result.confidence == 'high' %}The model is quite sure about this one.
+        {% elif result.confidence == 'moderate' %}Fairly confident, but not a sure thing.
+        {% else %}Close call, could easily go either way.{% endif %}
+      </p>
+      <p class="result__route">
+        <b>{{ result.route.origin }}</b>
+        <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg>
+        <b>{{ result.route.dest }}</b>
+        <span>· {{ result.route.airline }}</span>
+      </p>
+    </div>
+  </header>
+
+  {% if result.factors %}
+  <section class="factors">
+    <h3>What moved the score</h3>
+    <p class="factors__intro">
+      Compared with a flight that has average values everywhere ({{ (result.baseline * 100)|round|int }}%).
+    </p>
+    <ul>
+      {% for f in result.factors %}
+      {% set size = (f.impact|abs / strongest * 100)|round(1) %}
+      {% set strength = 'Strong' if f.impact|abs >= 1 else 'Moderate' if f.impact|abs >= 0.3 else 'Slight' %}
+      <li class="factor {{ 'factor--up' if f.impact > 0 else 'factor--down' }}">
+        <span class="factor__label">{{ f.label }}</span>
+        <span class="factor__bar" aria-hidden="true"><i style="--w: {{ size }}%"></i></span>
+        <span class="factor__effect">{{ strength }} {{ '↑ late' if f.impact > 0 else '↓ on time' }}</span>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
+  {% set h = result.route.history %}
+  {% if h %}
+  <section class="history">
+    <h3>This route in 2013</h3>
+    <dl>
+      <div><dt>Flights</dt><dd>{{ "{:,}".format(h.flights) }}</dd></div>
+      <div><dt>Arrived late</dt><dd>{{ (h.delay_rate * 100)|round|int }}%</dd></div>
+      <div><dt>Typical air time</dt><dd>{{ h.air_time }} min</dd></div>
+      <div><dt>Distance</dt><dd>{{ "{:,}".format(h.distance) }} mi</dd></div>
+    </dl>
+  </section>
+  {% endif %}
+
+  {% if result.assumptions %}
+  <section class="assumptions">
+    <h3>Estimated inputs</h3>
+    <ul>
+      {% for note in result.assumptions %}<li>{{ note }}</li>{% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+</article>
